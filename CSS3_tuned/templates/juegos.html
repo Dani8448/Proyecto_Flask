@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Catálogo de Juegos{% endblock %}
+
+{% block content %}
+<div id="site_content">
+    <div class="container">
+        <section class="12u">
+            <h2>Catálogo de Videojuegos</h2>
+
+            <!-- Formulario de búsqueda -->
+            <div class="transparent" style="margin-bottom: 1.5em;">
+                <form class="form_settings" method="GET" action="{{ url_for('juegos') }}">
+                    <p>
+                        <span><label for="q">Buscar por nombre:</label></span>
+                        <input type="text" id="q" name="q" value="{{ q }}" placeholder="Ej: Mario, GTA, Halo...">
+                    </p>
+                    <p>
+                        <span><label for="genero">Filtrar por género:</label></span>
+                        <select id="genero" name="genero" style="padding:0.25em; width:20em; font:100% arial; margin-bottom:1em; border:1px solid #bbb; color:#47433F;">
+                            <option value="" {% if not genero %}selected{% endif %}>— Todos los géneros —</option>
+                            {% for g in generos %}
+                            <option value="{{ g }}" {% if genero == g %}selected{% endif %}>{{ g }}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+                    <p>
+                        <span><label for="orden">Ordenar por nombre:</label></span>
+                        <select id="orden" name="orden" style="padding:0.25em; width:20em; font:100% arial; margin-bottom:1em; border:1px solid #bbb; color:#47433F;">
+                            <option value="asc"  {% if orden == 'asc'  %}selected{% endif %}>A → Z</option>
+                            <option value="desc" {% if orden == 'desc' %}selected{% endif %}>Z → A</option>
+                        </select>
+                    </p>
+                    <p>
+                        <span></span>
+                        <input type="submit" value="Buscar" class="submit">
+                        <a href="{{ url_for('juegos') }}" style="margin-left:1em; color:#0196E8;">Limpiar</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Resultados -->
+            <p>
+                <strong>{{ juegos|length }}</strong> resultado{% if juegos|length != 1 %}s{% endif %}
+                {% if q %} para "<em>{{ q }}</em>"{% endif %}
+                {% if genero %} en género <em>{{ genero }}</em>{% endif %}
+            </p>
+
+            {% if juegos %}
+            <table class="productos">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Año</th>
+                        <th>Género</th>
+                        <th>Plataforma</th>
+                        <th>Nota</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for juego in juegos %}
+                    <tr>
+                        <td><strong>{{ juego.titulo }}</strong></td>
+                        <td>{{ juego.año }}</td>
+                        <td>{{ juego.genero | join(', ') }}</td>
+                        <td>{{ juego.plataforma | join(', ') }}</td>
+                        <td><strong>{{ juego.valoraciones.nota }}</strong>/100</td>
+                        <td><a href="{{ url_for('detalle', jid=juego._id) }}">Ver ficha</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No se encontraron juegos con esos criterios. <a href="{{ url_for('juegos') }}">Ver todos</a>.</p>
+            {% endif %}
+
+        </section>
+    </div>
+</div>
+{% endblock %}

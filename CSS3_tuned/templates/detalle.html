@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ juego.titulo }}{% endblock %}
+
+{% block content %}
+<div id="site_content">
+    <div class="container">
+
+        <section class="8u">
+            <h2>{{ juego.titulo }}</h2>
+
+            <p><a href="{{ url_for('juegos') }}">&larr; Volver al catálogo</a></p>
+
+            <h3>Información general</h3>
+            <table class="productos">
+                <tbody>
+                    <tr>
+                        <th>Año de lanzamiento</th>
+                        <td>{{ juego.año }}</td>
+                    </tr>
+                    <tr>
+                        <th>Género</th>
+                        <td>{{ juego.genero | join(', ') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Plataforma</th>
+                        <td>{{ juego.plataforma | join(', ') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Desarrollador</th>
+                        <td>{{ juego.desarrollador.nombre }} ({{ juego.desarrollador.pais }})</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Puntuaciones de críticos</h3>
+            <table class="productos">
+                <tbody>
+                    <tr>
+                        <th>Metacritic</th>
+                        <td><strong>{{ juego.reseñas.criticos.metacritic }}</strong>/100</td>
+                    </tr>
+                    <tr>
+                        <th>IGN</th>
+                        <td><strong>{{ juego.reseñas.criticos.ign }}</strong>/10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Valoraciones de usuarios</h3>
+            <table class="productos">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Puntuación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in juego.reseñas.usuarios_detalle %}
+                    <tr>
+                        <td>{{ u.usuario }}</td>
+                        <td>{{ u.puntuacion }}/10</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <th>Media usuarios</th>
+                        <td><strong>{{ media_usuarios }}/10</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Ventas por región (millones de copias)</h3>
+            <table class="productos">
+                <thead>
+                    <tr>
+                        <th>Región</th>
+                        <th>Ventas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Europa</td>
+                        <td>{{ juego.ventas.europa }}M</td>
+                    </tr>
+                    <tr>
+                        <td>América</td>
+                        <td>{{ juego.ventas.america }}M</td>
+                    </tr>
+                    <tr>
+                        <td>Japón</td>
+                        <td>{{ juego.ventas.japon }}M</td>
+                    </tr>
+                    <tr>
+                        <th>Total global</th>
+                        <td><strong>{{ total_ventas }}M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><a href="{{ url_for('juegos') }}">&larr; Volver al catálogo</a></p>
+        </section>
+
+        <aside id="sidebar" class="4u">
+            <h3>Resumen rápido</h3>
+            <ul>
+                <li><strong>Nota general:</strong> {{ juego.valoraciones.nota }}/100</li>
+                <li><strong>Plataforma:</strong> {{ juego.plataforma | join(', ') }}</li>
+                <li><strong>Desarrollador:</strong> {{ juego.desarrollador.nombre }}</li>
+                <li><strong>País:</strong> {{ juego.desarrollador.pais }}</li>
+                <li><strong>Ventas totales:</strong> {{ total_ventas }}M de copias</li>
+            </ul>
+        </aside>
+
+    </div>
+</div>
+{% endblock %}

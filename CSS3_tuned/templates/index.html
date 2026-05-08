@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div id="site_content">
+    <div class="container">
+        <section class="12u">
+            <h2>Bienvenidos a GameVault</h2>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{ url_for('juegos') }}">
+                    <img src="{{ url_for('static', filename='images/personajes.png') }}"
+                         alt="GameVault — Catálogo de videojuegos"
+                         style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+
+            <p>Fundada sobre la pasión por los videojuegos clásicos, <strong>GameVault</strong> es una base de datos de los títulos más destacados de la era 2004-2007. Aquí encontrarás información detallada sobre puntuaciones, ventas y reseñas de los juegos que marcaron una generación.</p>
+
+            <p>En este espacio podrás explorar nuestro catálogo completo, buscar juegos por nombre o género, y consultar toda la información de cada título: notas de críticos, valoraciones de usuarios y datos de ventas por región.</p>
+
+            <p>Nuestra misión es preservar la memoria de aquella época dorada en la que los videojuegos vivieron una revolución sin precedentes, con títulos que siguen siendo referencia hoy en día.</p>
+
+            <h3>Fuentes de datos</h3>
+            <ol>
+                <li><a href="https://www.metacritic.com" target="_blank" rel="noopener noreferrer">Metacritic</a></li>
+                <li><a href="https://www.ign.com" target="_blank" rel="noopener noreferrer">IGN</a></li>
+                <li><a href="https://www.vgchartz.com" target="_blank" rel="noopener noreferrer">VGChartz</a></li>
+            </ol>
+
+            <p style="margin-top: 1.5em;">
+                <a href="{{ url_for('juegos') }}" class="button">Ver catálogo completo</a>
+            </p>
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}GameVault{% endblock %} - GameVault</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dropotron.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+
+    <script>
+    skel.init({
+        prefix: '{{ url_for("static", filename="css/style") }}',
+        preloadStyleSheets: true,
+        resetCSS: true,
+        boxModel: 'border',
+        grid: { gutters: 30 },
+        breakpoints: {
+            wide:   { range: '1200-',    containers: 1140, grid: { gutters: 50 } },
+            narrow: { range: '481-1199', containers: 960 },
+            mobile: { range: '-480',     containers: 'fluid', lockViewport: true, grid: { collapse: true } }
+        }
+    });
+
+    $(function() {
+        $('#main-nav > ul').dropotron({ offsetY: -10 });
+    });
+    </script>
+</head>
+<body>
+
+<!-- Header con menú -->
+<header id="header_container">
+    <div class="container">
+        <div id="header" class="row">
+            <div class="12u">
+                <h1><a href="{{ url_for('index') }}">GameVault</a></h1>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}class="active"{% endif %}>Inicio</a></li>
+                        <li><a href="{{ url_for('juegos') }}" {% if request.endpoint == 'juegos' %}class="active"{% endif %}>Juegos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido principal -->
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<div id="footer_container">
+    <div class="container">
+        <footer>
+            <p>&copy; 2024 GameVault — Base de datos de videojuegos clásicos 2004-2007. Datos extraídos de Metacritic e IGN.</p>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
