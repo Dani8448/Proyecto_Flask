@@ -1,0 +1,164 @@
+{
+  "videojuegos": [
+    {
+      "titulo": "Super Mario 64 DS",
+      "año": 2004,
+      "genero": ["Action", "Platform"],
+      "plataforma": ["Nintendo DS"],
+      "desarrollador": { "nombre": "Nintendo", "pais": "Japón" },
+      "valoraciones": { "nota": 85, "usuarios": [8, 9, 9, 10] },
+      "ventas": { "europa": 2.5, "america": 3.1, "japon": 1.2 },
+      "reseñas": {
+        "criticos": { "metacritic": 85, "ign": 9 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 8 },
+          { "usuario": "user2", "puntuacion": 9 }
+        ]
+      }
+    },
+    {
+      "titulo": "Lumines: Puzzle Fusion",
+      "año": 2004,
+      "genero": ["Strategy", "Puzzle"],
+      "plataforma": ["Sony PSP"],
+      "desarrollador": { "nombre": "Ubisoft", "pais": "Francia" },
+      "valoraciones": { "nota": 89, "usuarios": [9, 9, 8, 9] },
+      "ventas": { "europa": 1.1, "america": 1.5, "japon": 0.8 },
+      "reseñas": {
+        "criticos": { "metacritic": 89, "ign": 9 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 9 },
+          { "usuario": "user2", "puntuacion": 8 }
+        ]
+      }
+    },
+    {
+      "titulo": "Mario Kart DS",
+      "año": 2005,
+      "genero": ["Racing"],
+      "plataforma": ["Nintendo DS"],
+      "desarrollador": { "nombre": "Nintendo", "pais": "Japón" },
+      "valoraciones": { "nota": 91, "usuarios": [10, 9, 10, 9] },
+      "ventas": { "europa": 5.0, "america": 6.2, "japon": 3.5 },
+      "reseñas": {
+        "criticos": { "metacritic": 91, "ign": 9.5 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 10 },
+          { "usuario": "user2", "puntuacion": 9 }
+        ]
+      }
+    },
+    {
+      "titulo": "Call of Duty 4",
+      "año": 2007,
+      "genero": ["Shooter", "Action"],
+      "plataforma": ["Xbox 360", "PS3"],
+      "desarrollador": { "nombre": "Activision", "pais": "EEUU" },
+      "valoraciones": { "nota": 94, "usuarios": [10, 9, 10, 9] },
+      "ventas": { "europa": 7.0, "america": 8.5, "japon": 0.5 },
+      "reseñas": {
+        "criticos": { "metacritic": 94, "ign": 10 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 10 },
+          { "usuario": "user2", "puntuacion": 9 }
+        ]
+      }
+    },
+    {
+      "titulo": "FIFA 07",
+      "año": 2006,
+      "genero": ["Sports"],
+      "plataforma": ["PS2", "Xbox"],
+      "desarrollador": { "nombre": "EA Sports", "pais": "EEUU" },
+      "valoraciones": { "nota": 82, "usuarios": [8, 7, 8, 9] },
+      "ventas": { "europa": 6.0, "america": 3.0, "japon": 0.2 },
+      "reseñas": {
+        "criticos": { "metacritic": 82, "ign": 8 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 7 },
+          { "usuario": "user2", "puntuacion": 8 }
+        ]
+      }
+    },
+    {
+      "titulo": "Halo 3",
+      "año": 2007,
+      "genero": ["Shooter"],
+      "plataforma": ["Xbox 360"],
+      "desarrollador": { "nombre": "Microsoft", "pais": "EEUU" },
+      "valoraciones": { "nota": 93, "usuarios": [9, 10, 9, 10] },
+      "ventas": { "europa": 4.5, "america": 7.5, "japon": 0.3 },
+      "reseñas": {
+        "criticos": { "metacritic": 93, "ign": 9.5 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 9 },
+          { "usuario": "user2", "puntuacion": 10 }
+        ]
+      }
+    },
+    {
+      "titulo": "The Sims 2",
+      "año": 2004,
+      "genero": ["Simulation"],
+      "plataforma": ["PC"],
+      "desarrollador": { "nombre": "EA", "pais": "EEUU" },
+      "valoraciones": { "nota": 90, "usuarios": [9, 9, 10, 8] },
+      "ventas": { "europa": 5.5, "america": 6.0, "japon": 0.4 },
+      "reseñas": {
+        "criticos": { "metacritic": 90, "ign": 9 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 9 },
+          { "usuario": "user2", "puntuacion": 10 }
+        ]
+      }
+    },
+    {
+      "titulo": "Need for Speed Most Wanted",
+      "año": 2005,
+      "genero": ["Racing"],
+      "plataforma": ["PS2", "Xbox", "PC"],
+      "desarrollador": { "nombre": "EA", "pais": "EEUU" },
+      "valoraciones": { "nota": 88, "usuarios": [9, 8, 9, 8] },
+      "ventas": { "europa": 6.2, "america": 5.8, "japon": 0.3 },
+      "reseñas": {
+        "criticos": { "metacritic": 88, "ign": 8.5 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 8 },
+          { "usuario": "user2", "puntuacion": 9 }
+        ]
+      }
+    },
+    {
+      "titulo": "GTA San Andreas",
+      "año": 2004,
+      "genero": ["Action", "Adventure"],
+      "plataforma": ["PS2"],
+      "desarrollador": { "nombre": "Rockstar", "pais": "EEUU" },
+      "valoraciones": { "nota": 95, "usuarios": [10, 10, 9, 10] },
+      "ventas": { "europa": 10.0, "america": 12.0, "japon": 0.6 },
+      "reseñas": {
+        "criticos": { "metacritic": 95, "ign": 10 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 10 },
+          { "usuario": "user2", "puntuacion": 10 }
+        ]
+      }
+    },
+    {
+      "titulo": "Pro Evolution Soccer 6",
+      "año": 2006,
+      "genero": ["Sports"],
+      "plataforma": ["PS2"],
+      "desarrollador": { "nombre": "Konami", "pais": "Japón" },
+      "valoraciones": { "nota": 87, "usuarios": [8, 9, 9, 8] },
+      "ventas": { "europa": 7.0, "america": 2.5, "japon": 0.5 },
+      "reseñas": {
+        "criticos": { "metacritic": 87, "ign": 8.5 },
+        "usuarios_detalle": [
+          { "usuario": "user1", "puntuacion": 9 },
+          { "usuario": "user2", "puntuacion": 8 }
+        ]
+      }
+    }
+  ]
+}
