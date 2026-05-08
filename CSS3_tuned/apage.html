@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Destilería Clásica</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+
+    <script>
+        skel.init({
+            prefix: 'css/style',
+            preloadStyleSheets: true,
+            resetCSS: true,
+            boxModel: 'border',
+            grid: { gutters: 30 },
+            breakpoints: {
+                wide: { range: '1200-', containers: 1140, grid: { gutters: 50 } },
+                narrow: { range: '481-1199', containers: 960 },
+                mobile: { range: '-480', containers: 'fluid', lockViewport: true, grid: { collapse: true } }
+            }
+        });
+
+        $(function () {
+            $('#main-nav > ul').dropotron({ offsetY: -10 });
+        });
+    </script>
+</head>
+<body>
+
+<!-- Header con menú -->
+<header id="header_container">
+    <div class="container">
+        <div id="header" class="row">
+            <div class="12u">
+                <h1><a href="index.html">Destilería Clásica</a></h1>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#">La Destilería</a>
+                            <ul>
+                                <li><a href="anotherpage.html">Productos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido principal -->
+<div id="site_content">
+    <div class="container">
+        <section class="12u">
+            <h2>Bienvenidos a nuestra Destilería</h2>
+
+            <p>
+                Fundada bajo los estándares de la maestría tradicional,
+                <strong>Destilería Clásica</strong> representa la unión entre la paciencia
+                y el sabor. Aquí, cada gota cuenta una historia de dedicación y
+                cuidado artesanal en nuestros procesos.
+            </p>
+
+            <!-- Imagen destilería antigua centrada -->
+            <div style="text-align:center; margin:30px 0;">
+                <img src="images/antigua.jpg"
+                     alt="Nuestra Destilería antiguamente"
+                     style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+
+            <p>
+                En este espacio podrás explorar nuestro legado familiar,
+                conocer la variedad de productos que elaboramos siguiendo
+                recetas centenarias y ponerte en contacto con nosotros.
+                Navega a través de nuestro menú para descubrir los secretos
+                de nuestra bodega.
+            </p>
+
+            <p>
+                Nuestra misión es mantener viva la esencia de lo auténtico,
+                seleccionando personalmente cada ingrediente para garantizar
+                una experiencia única en cada visita.
+            </p>
+
+            <!-- Ingredientes centrados -->
+            <div style="text-align:center; margin:30px 0;">
+                <img src="images/ingredientes.jpeg"
+                     alt="Ingredientes de calidad"
+                     style="max-width:40%; height:auto; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:10px;">
+                <img src="images/ingredientesron.jpeg"
+                     alt="Ingredientes utilizados para el ron"
+                     style="max-width:40%; height:auto; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:10px;">
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer_container">
+    <div class="container">
+        <p>Copyright &copy; 2026 - Destilería Clásica</p>
+    </div>
+</footer>
+
+</body>
+</html>
