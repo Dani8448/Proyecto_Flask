@@ -5,15 +5,13 @@ import os
 app = Flask(__name__)
 
 def load_data():
-    # Esta línea construye la ruta exacta hasta tu archivo JSON
-    # sin importar desde dónde ejecutes el script.
+
     base_path = os.path.dirname(__file__)
     ruta_json = os.path.join(base_path, 'data', 'videojuegos.json')
     
     try:
         with open(ruta_json, encoding='utf-8') as f:
             datos = json.load(f)
-            # Como tu JSON tiene la clave "videojuegos", la extraemos
             return datos.get('videojuegos', [])
     except Exception as e:
         print(f"Error crítico cargando el JSON: {e}")
@@ -27,11 +25,9 @@ def index():
 def juegos():
     todos = load_data()
     
-    # Asignamos ID basado en la posición para que el enlace a detalle funcione
     for i, g in enumerate(todos):
         g['_id'] = i
 
-    # Parámetros de búsqueda
     q      = request.args.get('q', '').strip()
     genero = request.args.get('genero', '').strip()
     orden  = request.args.get('orden', 'asc').strip()
@@ -46,16 +42,14 @@ def juegos():
             generos_set.add(g_list)
     lista_generos = sorted(list(generos_set))
 
-    # Aplicar Filtros
     resultado = todos[:]
     if q:
         resultado = [j for j in resultado if q.lower() in j.get('titulo', '').lower()]
     
     if genero:
-        # Filtramos comprobando si el género está en la lista del juego
         resultado = [j for j in resultado if genero in j.get('genero', [])]
 
-    # Ordenar
+
     resultado = sorted(resultado, key=lambda j: j.get('titulo', '').lower(), reverse=(orden == 'desc'))
 
     return render_template('juegos.html', 
@@ -73,7 +67,6 @@ def detalle(jid):
     
     juego = todos[jid]
     
-    # Cálculos para la plantilla de detalles
     v = juego.get('ventas', {})
     total = v.get('europa', 0) + v.get('america', 0) + v.get('japon', 0)
     
